@@ -5,7 +5,7 @@
     <title>Product Manager Evaluation</title>
     <meta name='robots' content='noindex' charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <!-- <link rel="stylesheet" href="css/materialize.css"> -->
 </head>
 
@@ -15,21 +15,8 @@
         <hr />
     </header>
 
-    <main class="content">
-        <form action="">
-            <section id="productKnowledge">
-                <h2>Product Knowledge</h2>
-            </section>
-            <hr />
-            <section id="processSkillsandTechniques">
-                <h2>Process Skills and Techniques</h2>
-            </section>
-            <hr />
-            <section id="peopleSkillsandResponsibilities">
-                <h2>People Skills and Responsibilities</h2>
-            </section>
-        </form>
-    </main>
+    {% block content %} {% endblock content%}
+
     <aside class="sidebar">
         <ul>
             <li><a href="https://github.com/pocketry/" target='blank'>This page on GitHub</a></li>
@@ -40,4 +27,7 @@
         <hr />
         <p>Made by me</p>
     </footer>
-    <script src=js/javascript.js> </script> </body> </html>
+    <script type='text/javascript' src="{{ url_for('static', filename='javascript.js') }}"> </script>
+</body>
+
+</html>
