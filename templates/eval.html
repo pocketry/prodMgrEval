@@ -1,18 +1,30 @@
 {% extends "layout.html" %}
 {% block content %}
 <main class="content">
-    <form action="">
-        <section id="productKnowledge">
-            <h2>Product Knowledge</h2>
-        </section>
-        <hr />
-        <section id="processSkillsandTechniques">
-            <h2>Process Skills and Techniques</h2>
-        </section>
-        <hr />
-        <section id="peopleSkillsandResponsibilities">
-            <h2>People Skills and Responsibilities</h2>
-        </section>
+    <form method="POST" action="">
+        <fieldset>
+            {% for category in eval %}
+            <section id="{{ category.name }}">
+                <h2>{{ category.label }}</h2>
+                {% for criterion in category.criteria %}
+                <div class='criteria'>
+                    <h4>{{ criterion.label }}</h4>
+                    <input type="range" class="slider" id="{{ criterion.label }}" name="{{ criterion.label }}" min="0"
+                        max="10" step=".5" onclick="updateEval(this)" />
+                </div>
+                {% endfor %}
+            </section>
+            <hr />
+            {% endfor %}
+            <!-- <section id="processSkillsandTechniques">
+                <h2>Process Skills and Techniques</h2>
+            </section>
+            <hr />
+            <section id="peopleSkillsandResponsibilities">
+                <h2>People Skills and Responsibilities</h2>
+            </section> -->
+        </fieldset>
     </form>
 </main>
+<script>var evaluation = {{ eval| tojson }}; </script>
 {% endblock content %}

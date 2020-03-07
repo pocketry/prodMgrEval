@@ -34,3 +34,7 @@
 .slider {
     width: 400px;
 }
+
+fieldset {
+    border: none;
+}

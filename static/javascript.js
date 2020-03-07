@@ -74,27 +74,45 @@ function getCriteriaElement(label) {
 
     criteriaHeader = document.createElement('h4');
     criteriaHeader.textContent = label;
+    criteriaDiv.appendChild(criteriaHeader);
 
     criteriaInput = document.createElement('input');
     criteriaInput.setAttribute("type", "range");
     criteriaInput.setAttribute("class", "slider");
     criteriaInput.setAttribute("id", label.replace(/ /g, ""));
     criteriaInput.setAttribute("name", label.replace(/ /g, ""));
-    criteriaInput.setAttribute("onclick", "updateEval");
+    // criteriaInput.setAttribute("onclick", "updateEval");
     criteriaInput.setAttribute("min", "0");
     criteriaInput.setAttribute("max", "10");
     criteriaInput.setAttribute("step", ".5");
     criteriaInput["value"] = "0";
 
-    criteriaDiv.appendChild(criteriaHeader);
+
     criteriaDiv.appendChild(criteriaInput);
 
     return criteriaDiv;
 }
 
-// function updateEval(
-
-// )
+function updateEval(e) {
+    // console.log("click!");
+    // console.log(e)
+    console.log(e.id);
+    // console.log(e.parentElement.parentElement.id)
+    for (category in evaluation) {
+        console.log(category["name"]);
+        // console.log();
+        if (category["name"] == e.parentElement.parentElement.id) {
+            for (criterion in category["criteria"]) {
+                console.log(criterion["label"]);
+                if (criterion["label"] == e.id) {
+                    criterion["value"] = e.value;
+                    console.log(criterion);
+                }
+            }
+        }
+    }
+    // console.log(evaluation);
+}
 
 productSection = document.querySelector("#productKnowledge");
 processSection = document.querySelector("#processSkillsandTechniques");
@@ -102,24 +120,38 @@ peopleSection = document.querySelector("#peopleSkillsandResponsibilities");
 
 criteria = getCriteria();
 
-for (c in criteria) {
-    // console.log(criteria[c].category);
-    if (criteria[c].category == 'productKnowledge') {
-        productSection.appendChild(getCriteriaElement(criteria[c].label));
-    }
-    if (criteria[c].category == 'processSkillsandTechniques') {
-        processSection.appendChild(getCriteriaElement(criteria[c].label));
-    }
-    if (criteria[c].category == 'peopleSkillsandResponsibilities') {
-        peopleSection.appendChild(getCriteriaElement(criteria[c].label));
-    }
-}
+// for (c in criteria) {
+//     // console.log(criteria[c].category);
+//     if (criteria[c].category == 'productKnowledge') {
+//         productSection.appendChild(getCriteriaElement(criteria[c].label));
+//     }
+//     if (criteria[c].category == 'processSkillsandTechniques') {
+//         processSection.appendChild(getCriteriaElement(criteria[c].label));
+//     }
+//     if (criteria[c].category == 'peopleSkillsandResponsibilities') {
+//         peopleSection.appendChild(getCriteriaElement(criteria[c].label));
+//     }
+// }
 
-inputs = document.querySelectorAll("input");
+inputs = document.querySelectorAll("input.slider");
 // console.log(inputs.length);
-evaluation = [];
+// evaluation = [];
 
-inputs.forEach(i => evaluation.push({ [i["id"]]: i["value"] }));
+// // setup inputs
+// for (i in inputs) {
+//     inputs[i]["min"] = "0";
+//     inputs[i]["max"] = "10";
+//     inputs[i]["step"] = ".5";
+//     inputs[i]["value"] = "0";
+//     inputs[i].oninput = updateEval;
+//     // inputs[i]["onclick"] = "updateEval";
+// }
 
+// inputs.forEach(i => evaluation.push({ [i["id"]]: i["value"] }));
+console.log(evaluation);
 // console.log(evaluation);
+
+
+
+
 
