@@ -1,0 +1,99 @@
+{
+    "categories": [
+        {
+            "name": "productKnowledge",
+            "label": "Product Knowledge",
+            "order": "1"
+        },
+        {
+            "name": "processSkillsandTechniques",
+            "label": "Process Skills and Techniques",
+            "order": "2"
+        },
+        {
+            "name": "peopleSkillsandResponsibilities",
+            "label": "People Skills and Responsibilities",
+            "order": "3"
+        }
+    ],
+    "criteria": [
+        {
+            "label": "User and Customer Knowledge",
+            "name": "userAndCustomerKnowledge",
+            "category": "productKnowledge",
+            "value": "7",
+        },
+        {
+            "label": "Data Knowledge",
+            "name": "dataKnowledge",
+            "category": "productKnowledge",
+            "value": "7",
+        },
+        {
+            "label": "Industry and Domain Knowledge",
+            "name": "industeryAndDomainKnowledge",
+            "category": "productKnowledge",
+            "value": "7",
+        },
+        {
+            "label": "Business and Company Knowledge",
+            "name": "businessAndCompanyKnowledge",
+            "category": "productKnowledge",
+            "value": "7",
+        },
+        {
+            "label": "Product Operational Knowledge",
+            "name": "productOperationalKnowledge",
+            "category": "productKnowledge",
+            "value": "7",
+        },
+        {
+            "label": "Product Discovery Techniques",
+            "name": "productDiscoveryTechniques",
+            "category": "processSkillsandTechniques",
+            "value": "7",
+        },
+        {
+            "label": "Product Optimization Techniques",
+            "name": "productOptimizationTechniques",
+            "category": "processSkillsandTechniques",
+            "value": "7",
+        },
+        {
+            "label": "Product Delivery Techniques",
+            "name": "productDeliveryTechniques",
+            "category": "processSkillsandTechniques",
+            "value": "7",
+        },
+        {
+            "label": "Product Development Process",
+            "name": "productDevelopmentProcess",
+            "category": "processSkillsandTechniques",
+            "value": "7",
+        },
+        {
+            "label": "Team Collaboration Skills",
+            "name": "teamCollaborationSkills",
+            "category": "peopleSkillsandResponsibilities",
+            "value": "7",
+        },
+        {
+            "label": "Stakeholder Management Skills",
+            "name": "stakeholderManagementSkills",
+            "category": "peopleSkillsandResponsibilities",
+            "value": "7",
+        },
+        {
+            "label": "Evangelism Skills",
+            "name": "evangilismSkills",
+            "category": "peopleSkillsandResponsibilities",
+            "value": "7",
+        },
+        {
+            "label": "Leadership Skills",
+            "name": "leadershipSkills",
+            "category": "peopleSkillsandResponsibilities",
+            "value": "7",
+        },
+    ]
+}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset>
+        {% for category in eval %}
+        <section id="{{ category.name }}">
+            <h2>{{ category.label }}</h2>
+            {% for criterion in category.criteria %}
+            <div class='criteria'>
+                <h4>{{ criterion.label }}</h4>
+                <input type="range" class="slider" id="{{ criterion.category }}-{{ criterion.name }}"
+                    name="{{ criterion.category }}-{{ criterion.name }}" min="0" max="10" step=".5"
+                    value="{{ criterion.value }}" />
+            </div>
+            {% endfor %}
+        </section>
+        <hr />
+        {% endfor %}
+    </fieldset>
+    <button>Submit</button>
+</form>
+<!-- <script>var evaluation = {{ eval| tojson }}; </script> -->
+{% endblock content %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Manager Evaluation</title>
+    <meta name='robots' content='noindex' charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body class="mainGrid">
+    <header class="pageHeader">
+        <h1>Product Manager Evaluation</h1>
+    </header>
+    <div class="authLinks">
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+
+    <main class="content">
+        {% block content %} {% endblock content%}
+    </main>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="https://github.com/pocketry/" target='blank'>This page on GitHub</a></li>
+            <li><a href='https://svpg.com' target='blank'>SVPG</a></li>
+        </ul>
+    </aside>
+    <footer class="pageFooter">
+        <hr />
+        <p>Made by me</p>
+    </footer>
+    <!-- <script type='text/javascript' src="{{ url_for('static', filename='javascript.js') }}"> </script> -->
+</body>
+
+</html>

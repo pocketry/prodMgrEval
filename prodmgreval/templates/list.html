@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form class='typeForm' method='POST'>
+    <select id='typeDropdown' name='typeDropdown'>
+        <option value='productManager' selected>Product Manager</option>
+    </select>
+    <button>Create</button>
+</form>
+<div class='evalList headerrow'>
+    <p class='flexCol1'>ID</p>
+    <p>Name</p>
+</div>
+
+{% for eval in list %}
+<hr />
+<div class='evalList'>
+    <p class='flexCol1'>{{ eval.id }}</p>
+    <p>{{ eval.name }}</p>
+</div>
+{% endfor %}
+
+
+{% endblock content %}
